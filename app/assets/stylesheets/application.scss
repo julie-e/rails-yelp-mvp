@@ -13,3 +13,71 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #E8E8E8;
+}
+
+li {
+  list-style: none;
+}
+
+.card {
+  height: 350px;
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.card-add {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+.card-category {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 24px;
+    text-decoration: none;
+}
+
+.card-title {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+}
+
+.restaurant-name {
+  color: white;
+  text-decoration: none;
+}
+
+.card-description p {
+  font-size: 13px;
+  }
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card:hover{
+  opacity: 0.9;
+}

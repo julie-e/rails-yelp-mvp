@@ -1,0 +1,35 @@
+<h1 class="text-center">List of all restaurants</h1>
+
+<div class="text-center">
+  <h2><%= link_to "Add a new Restaurant", new_restaurant_path(@restaurant), class: "btn btn-primary" %></h2>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('/assets/background.jpg');">
+          <div class="card-category">
+            <p> <form action="restaurants/category">
+              <input type="hidden" value="<%= restaurant.category%>" name="category">
+              <input type="Submit" value="<%= restaurant.category%>" class="btn btn-primary">
+            </form></p>
+          </div>
+          <div class="card-title text-center">
+            <h2><%= link_to restaurant.name, restaurant_path(restaurant), class: "restaurant-name"%></h2>
+          </div>
+          <div class="card-description">
+            <p><strong><i class="fa fa-address-book-o" aria-hidden="true"></i>  </strong><%= restaurant.address %></p>
+            <p><strong><i class="fa fa-phone" aria-hidden="true"></i>  </strong><%= restaurant.phone_number %></p>
+            <p><strong><i class="fa fa-star" aria-hidden="true"></i>  </strong><%= average_rating(restaurant) %></p>
+          </div>
+          <div class="card-add text-center ">
+            <%= link_to "Add a Review",  new_restaurant_review_path(restaurant), class: "btn btn-success"%>
+          </div>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>

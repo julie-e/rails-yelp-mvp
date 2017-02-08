@@ -1,0 +1,17 @@
+<h1>Here are all the<%= @category %>Restaurants</h1>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <h2><%= link_to restaurant.name, restaurant_path(restaurant)%></h2>
+      <p><strong>Address: </strong><%= restaurant.address %></p>
+      <p><strong>Phone Number: </strong><%= restaurant.phone_number %></p>
+      <p class="label label-default label-as-badge"><%= restaurant.category%></p>
+    </li>
+  <% end %>
+</ul>
+
+
+<div class="text-center">
+  <%= link_to "Back to Restaurants", restaurants_path, class: "btn btn-primary" %>
+</div>

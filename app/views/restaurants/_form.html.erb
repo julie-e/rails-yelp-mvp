@@ -1,0 +1,9 @@
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :category, collection: Restaurant::CATEGORIES, prompt: "Chose a category" %>
+  <%= f.input :phone_number %>
+  <%= f.button :submit, class: "btn btn-success"%>
+<% end %>
